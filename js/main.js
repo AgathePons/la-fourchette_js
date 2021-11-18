@@ -35,7 +35,7 @@ function guessMyNumber() {
     }
 
   }
-  // Quand il a trouvé, on lui dit bravo et c'est fini
+  // Quand il a trouvé, on lui dit bravo, on lui dit en combien d'essai il a trouvé et c'est fini
   alert(`🎉 Bien ouèj ! C'était bien ${numberToGuess} ! Tu as trouvé en ${count} essais`);
 
 }
