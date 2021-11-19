@@ -58,14 +58,27 @@ function guessMyNumberDoWhile() {
 }
 
 // --- encore une alternative !!! avec l'indice direct dans le prompt --- //
-function guessMyNumberDoWhileNoAlert() {
-  var numberToGuess = Math.round(Math.random() * 500) + 1;
-  console.log(numberToGuess);
-  var clue = "";
-  var count = 0;
+// -- on décompose en fonctions ---- //
+var maximumNumber = 500;
+var numberToGuess = getRandomNumber(maximumNumber);
+var clue = "";
+var count = 0;
 
+console.log(numberToGuess);
+
+function getRandomNumber(myNumber) {
+  return Math.ceil(Math.random() * myNumber);
+}
+
+function getNumberFromUser() {
+  var inputNumber = parseInt(prompt("Guess my number! \n" + clue));
+  return inputNumber;
+}
+
+function guessMyNumberDoWhileNoAlert() {
+  getRandomNumber(500);
   do {
-    var userNumber = parseInt(prompt("Guess my number! \n" + clue));
+    var userNumber = getNumberFromUser();
     count++
     //console.log("count :", count);
     if (userNumber < numberToGuess) {
