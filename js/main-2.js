@@ -64,7 +64,7 @@ var numberToGuess = getRandomNumber(maximumNumber);
 var clue = "";
 var count = 0;
 
-console.log(numberToGuess);
+
 
 function getRandomNumber(myNumber) {
   return Math.ceil(Math.random() * myNumber);
@@ -75,8 +75,17 @@ function getNumberFromUser() {
   return inputNumber;
 }
 
-function guessMyNumberDoWhileNoAlert() {
-  getRandomNumber(500);
+function initGame(myRange = 500) {
+  maximumNumber = myRange;
+  numberToGuess = getRandomNumber(maximumNumber);
+  clue = "";
+  count = 0;
+}
+
+function guessMyNumberDoWhileNoAlert(myRange) {
+  //getRandomNumber(500);
+  initGame(myRange);
+  console.log(numberToGuess);
   do {
     var userNumber = getNumberFromUser();
     count++
@@ -89,9 +98,16 @@ function guessMyNumberDoWhileNoAlert() {
   } while (userNumber !== numberToGuess);
 
   alert(`Bien ouèj, t'as réussi en ${count} essais !`);
+  var playAgain = confirm("Want to play again ?!");
+
+  if (playAgain) {
+    guessMyNumberDoWhileNoAlert();
+  } else {
+    alert("Bouuuuh le gros lâcheuuuuur !");
+  }
 }
 
-testRandomNumber(500);
+//testRandomNumber(500);
 //guessMyNumber();
 //guessMyNumberDoWhile();
-guessMyNumberDoWhileNoAlert();
+guessMyNumberDoWhileNoAlert(10);
