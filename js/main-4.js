@@ -59,6 +59,23 @@ function playAgain() {
   }
 }
 
+// autre façon d'afficher les score en une alerte sur plusieurs lignes
+function playAgainAlert() {
+  var playAgain = confirm("Want to play again ?!");
+  var stringCore = "";
+  if (playAgain) {
+    play();
+  } else {
+    //console.log(game.scores);
+    // pour chaque entrée du tableau, on affiche une ligne dans la console
+    for (let i = 0; i < game.scores.length; i++) {
+      //console.log(`Partie n°${i + 1}: ${game.scores[i]} essai(s)`);
+      stringCore += `Partie n°${i + 1}: ${game.scores[i]} essai(s)\n`;
+    }
+    alert(stringCore);
+  }
+}
+
 function play() {
   // On initie le jeu en remettant à 0
   initGame();
@@ -79,7 +96,7 @@ function play() {
   // on ajoute le count au tableau des scores
   game.scores.push(game.count);
   // on rejoue ?
-  playAgain();
+  playAgainAlert();
 }
 
 //testRandomNumber(0, 50);
