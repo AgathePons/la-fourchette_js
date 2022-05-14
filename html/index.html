@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Le juste prix</title>
-</head>
-<body>
-    <h1>Kikoo js</h1>
-    <!-- <script src="../js/main.js"></script> -->
-    <!-- <script src="../js/main-2.js"></script> -->
-    <!-- <script src="../js/main-3.js"></script> -->
-    <script src="../js/main-4.js"></script>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Le juste prix</title>
+  <link rel="stylesheet" href="../public/styles.css">
+</head>
+
+<body>
+  <h1 id="title-text">Kikoo js</h1>
+  <button type="button" id="play-button" class="visible play-btn">Play!</button>
+  <div class="game-bloc hidden" id="game-form-bloc">
+    <form>
+      <div class="input-group">
+        <label for="user-number-input">Guess a number !</label>
+        <input type="number" id="user-number-input">
+        <button type="button" class="submit-btn" id="submit-user-number">Guess!</button>
+      </div>
+    </form>
+    <div class="result-bloc">
+      <p id="user-result-p"></p>
+    </div>
+  </div>
+  <div class="scores-bloc">
+    <table>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Attemps</th>
+        </tr>
+      </thead>
+      <tbody id="table-score-body">
+
+      </tbody>
+    </table>
+  </div>
+  <!-- <script src="../js/main.js"></script> -->
+  <!-- <script src="../js/main-2.js"></script> -->
+  <!-- <script src="../js/main-3.js"></script> -->
+  <script src="../js/my-game.js"></script>
 </body>
+
 </html>
